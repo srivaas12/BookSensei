@@ -2,8 +2,7 @@
 
 Welcome to BookSenSei, a smart book recommendation engine that goes beyond keywords to find books based on the *meaning* and *vibe* of your query. Tell the Sensei what you're in the mood for, and get personalized recommendations powered by semantic search and modern AI.
 
-![BookSenSei App Screenshot](https://i.imgur.com/Qk7M0V4.jpeg)
-_Replace this with a link to your own screenshot!_
+
 
 ---
 
