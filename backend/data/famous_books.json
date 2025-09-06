@@ -1,0 +1,21 @@
+[
+    {
+      "title": "Harry Potter and the Sorcerer's Stone",
+      "author": "J.K. Rowling",
+      "summary": "Harry discovers he is a wizard and attends Hogwarts School of Witchcraft and Wizardry.",
+      "rating": 4.75
+    },
+    {
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "summary": "Bilbo Baggins goes on a journey with dwarves to reclaim treasure from a dragon.",
+      "rating": 4.6
+    },
+    {
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "summary": "A shepherd boy travels in search of treasure and finds deeper meaning in life.",
+      "rating": 4.3
+    }
+  ]
+  

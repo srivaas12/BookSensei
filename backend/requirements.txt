@@ -1,0 +1,8 @@
+sentence-transformers
+langchain
+transformers
+pandas
+chromadb
+gradio
+fastapi
+uvicorn
