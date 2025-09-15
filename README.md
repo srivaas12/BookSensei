@@ -34,76 +34,9 @@ This is a full-stack application built with modern technologies:
 
 ---
 
-## 🚀 How to Run This Project Locally
-
-Follow these instructions to get BookSenSei running on your own machine.
-
-#### **Prerequisites**
-Make sure you have the following software installed:
-* Git
-* Python (3.8+)
-* Node.js (16+)
-
-#### **1. Clone the Repository**
-```bash
-git clone [https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git)
-cd YOUR_REPOSITORY_NAME
-```
-
-#### **2. Set Up the Backend (Python)**
-* Navigate to the backend folder:
-    ```bash
-    cd backend
-    ```
-* Create and activate a virtual environment:
-    ```bash
-    # Create the environment
-    python -m venv venv
-    
-    # Activate on Windows (PowerShell)
-    .\venv\Scripts\Activate.ps1
-    
-    # Activate on Mac/Linux
-    # source venv/bin/activate
-    ```
-* Install the required packages:
-    ```bash
-    pip install -r requirements.txt
-    ```
-* **One-Time Step:** Build the book database. This will take a few minutes.
-    ```bash
-    python embed_books.py
-    ```
-
-#### **3. Set Up the Frontend (React)**
-* Open a **new, separate terminal**.
-* Navigate to the frontend folder:
-    ```bash
-    cd frontend 
-    ```
-* Install the required packages:
-    ```bash
-    npm install
-    ```
-
-#### **4. Run the Application!**
-You need to have **both terminals running** at the same time.
-
-* **In your Backend Terminal:** Start the Python server.
-    ```bash
-    uvicorn main:app --reload
-    ```
-* **In your Frontend Terminal:** Start the React application.
-    ```bash
-    npm start
-    ```
-
-Your browser should automatically open to `http://localhost:3000`.
 
 ---
 
 ## 👤 About the Author
 
-This project was created by **[Your Name]** as a demonstration of modern full-stack development and AI-powered search.
-
-_Add a link to your personal portfolio, LinkedIn, or GitHub profile here!_
+This project was created by **SRIVASUDEVAN R** as a demonstration of modern full-stack development and AI-powered search.
