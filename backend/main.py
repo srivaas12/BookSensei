@@ -22,6 +22,7 @@ app.add_middleware(
         "Content-Type",
         "Authorization",
         "X-Min-Rating",
+        "x-min-rating",
         "*"
     ],
 )
