@@ -79,12 +79,22 @@ async def get_popular_books():
 
 @app.post("/recommend")
 async def recommend_books(request: Request):
+    # Allow OPTIONS preflight
+    if request.method == "OPTIONS":
+        return {}
+
     if not collection:
         return {"error": "Database collection not available."}
 
-    body = await request.json()
+    try:
+        body = await request.json()
+    except:
+        body = {}
+
     keyword = body.get("query", "")
-    min_rating = request.headers.get("x-min-rating", "0") 
+    
+    # get rating from header (case-insensitive)
+    min_rating = request.headers.get("x-min-rating") or request.headers.get("X-Min-Rating") or "0"
 
     if not keyword:
         return {"recommendations": []}
@@ -98,13 +108,11 @@ async def recommend_books(request: Request):
         print(f"🔥 ChromaDB Query Error: {e}")
         return {"error": str(e)}
 
-    # Filtering and Formatting Logic
     filtered_books = []
     if results and results["ids"][0]:
         for i in range(len(results["ids"][0])):
             meta = results["metadatas"][0][i]
-            
-            # ✅ 2. GET the title from the metadata
+
             book_title = meta.get("title", "No Title")
 
             book_for_frontend = {
@@ -116,7 +124,6 @@ async def recommend_books(request: Request):
                 "buy_link": f"https://www.amazon.com/s?k={urllib.parse.quote_plus(book_title)}"
             }
 
-            # Perform the rating filter
             rating = meta.get("average_rating")
             if rating is not None and float(rating) >= float(min_rating):
                 filtered_books.append(book_for_frontend)
