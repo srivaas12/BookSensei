@@ -35,16 +35,23 @@ function Dashboard() {
       );
 
       const data = res.data;
+console.log("API response:", data);
 
-      // Robust check: Only update state if the data is an array.
-      if (Array.isArray(data.recommendations)) {
-        setResults(data.recommendations);
-        addToHistory(q);
-      } else {
-        console.error("Received unexpected data format:", data);
-        setError("Received an unexpected response from the server.");
-      }
-
+// If backend returned an error, show it
+if (data && data.error) {
+  console.error("Backend error:", data.error);
+  setError(data.error);
+}
+// Normal success case: recommendations is an array
+else if (data && Array.isArray(data.recommendations)) {
+  setResults(data.recommendations);
+  addToHistory(q);
+}
+// Anything else is unexpected
+else {
+  console.error("Received unexpected data format:", data);
+  setError("Received an unexpected response from the server.");
+}
     } catch (err) {
       setError('Failed to fetch recommendations. The server may be down.');
       console.error(err);
