@@ -4,15 +4,26 @@ import chromadb
 import random
 import urllib.parse # ✅ 1. IMPORT the missing module
 
+origins = [
+    "http://localhost:3000",
+    "https://book-sensei.vercel.app",
+    "https://book-sensei-eh3cj7pfc-sri-vasu-devan-rs-projects.vercel.app"
+]
+
 app = FastAPI()
 
 # Allow frontend to connect
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"],
+    allow_headers=[
+        "Content-Type",
+        "Authorization",
+        "X-Min-Rating",
+        "*"
+    ],
 )
 
 # Initialize ChromaDB client and connect to the persistent database
