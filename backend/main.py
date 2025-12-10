@@ -77,6 +77,11 @@ async def get_popular_books():
         print(f"🔥 Error fetching popular books: {e}")
         return {"error": str(e)}
 
+@app.options("/recommend")
+async def options_recommend():
+    return {}
+
+
 @app.post("/recommend")
 async def recommend_books(request: Request):
     # Allow OPTIONS preflight
